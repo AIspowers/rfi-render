@@ -1,0 +1,33 @@
+# Render deployment configuration
+services:
+  # Backend API service
+  - type: web
+    name: rfi-api
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: cd rfi-interface && python start_api.py
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false # User must set this manually in the Render dashboard
+      - key: PORT
+        value: 8001
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: FRONTEND_URL
+        value: https://rfi-interface.onrender.com
+
+  # Frontend service
+  - type: web
+    name: rfi-interface
+    env: node
+    plan: free
+    buildCommand: cd rfi-interface && ./build.sh
+    startCommand: cd rfi-interface && node server.js
+    envVars:
+      - key: VITE_API_URL
+        value: https://rfi-api.onrender.com # Update this with your actual API service URL
+      - key: PORT
+        value: 10000
+      - key: NODE_VERSION
+        value: 18.0.0 
