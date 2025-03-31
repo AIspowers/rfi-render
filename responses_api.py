@@ -407,11 +407,11 @@ async def serve_frontend_catch_all(catch_all: str):
     return FileResponse("frontend/dist/index.html")
 
 # Main entry point
-if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8001))
+#if __name__ == "__main__":
+   # port = int(os.getenv("PORT", 8001))
     
     # Make sure the frontend/dist directory exists
-    os.makedirs("frontend/dist/assets", exist_ok=True)
+    #os.makedirs("frontend/dist/assets", exist_ok=True)
     
-    print(f"Starting server on port {port}")
-    uvicorn.run("responses_api:app", host="0.0.0.0", port=port) 
+   # print(f"Starting server on port {port}")
+   # uvicorn.run("responses_api:app", host="0.0.0.0", port=port) 
