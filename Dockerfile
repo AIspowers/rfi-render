@@ -21,7 +21,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy backend files
 COPY C:\Users\awsna\channel-factory-rfi-main\api\responses_api.py .
-COPY C:\Users\awsna\channel-factory-rfi-main\api\rfi-docs ./rfi-docs
+COPY C:\Users\awsna\channel-factory-rfi-main\api\rfi-docs
 
 # Copy frontend build from the frontend-builder stage
 COPY --from=frontend-builder /app/frontend/dist /app/frontend/dist
