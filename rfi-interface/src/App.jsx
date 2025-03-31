@@ -153,9 +153,9 @@ function App() {
         
         // Transform the data to match the expected format from API response
         const statsData = {
-          total: data.total_conversations || 0,
-          helpful: data.helpful_count || 0,
-          notHelpful: data.not_helpful_count || 0,
+          total: data.total_feedback || 0,
+          helpful: data.helpful || 0,
+          notHelpful: data.not_helpful || 0,
           percentage: data.helpful_percentage || 0,
           comments: data.comments || []
         };
