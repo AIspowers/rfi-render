@@ -22,7 +22,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy backend files
 COPY ./api/responses_api.py /app/
 
-COPY COPY ./api/rfi-docs /app/api/rfi-docs
+COPY ./rfi-docs /app/rfi-docs
 
 
 # Copy frontend build from the frontend-builder stage
