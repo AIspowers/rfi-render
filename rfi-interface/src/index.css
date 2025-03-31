@@ -98,7 +98,6 @@ header h1 {
 .question-form {
   display: flex;
   align-items: center;
-  flex-direction: column;
   gap: 0.5rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid var(--border-color);
@@ -107,10 +106,8 @@ header h1 {
 
 textarea {
   flex: 1;
-  min-height: 50px;
-  max-height: 200px;
+  height: 50px;
   padding: 0.75rem 1rem;
-  height: auto;
   border-radius: 8px;
   resize: none;
   border: 1px solid var(--border-color);
@@ -120,8 +117,8 @@ textarea {
   font-size: 1rem;
   line-height: 1.5;
   overflow-y: auto;
-  transition: border-color 0.2s, box-shadow 0.2s;
 }
+
 
 textarea:focus {
   outline: none;
@@ -129,17 +126,9 @@ textarea:focus {
   box-shadow: 0 0 0 2px rgba(var(--accent-color-rgb), 0.2);
 }
 
-.input-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  width: 100%;
-}
-
 .send-button {
-  position: relative;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   background-color: var(--accent-color);
   border: none;
   color: white;
@@ -147,19 +136,32 @@ textarea:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  padding: 0;
+  border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.2s;
 }
 
+
 .send-button:hover:not(:disabled) {
-  background-color: var(--accent-hover);
+  background-color: var(--accent-color);
+  transform: translateY(-8px);
 }
 
 .send-button:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+}
+
+.send-icon {
+  width: 18px;
+  height: 18px;
+  fill: #FFFFFF;
+  stroke: none;
+  transform: none;
+  transition: none;
+}
+
+.send-button:hover .send-icon {
+  transform: none;
 }
 
 button {
