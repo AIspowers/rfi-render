@@ -13,7 +13,7 @@ app.add_middleware(
     allow_origins=[os.environ.get("FRONTEND_URL", "https://rfi-interface.onrender.com")],
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"],
+    allow_headers=["*"] ,
 )
 
 if __name__ == "__main__":
